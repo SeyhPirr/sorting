@@ -2,11 +2,11 @@ import java.util.concurrent.RecursiveAction;
 
 public class QuickSortTask extends RecursiveAction {
     private static final int THRESHOLD = 100;
-    private int[] array;
+    private Comparable[] array;
     private int left;
     private int right;
 
-    public QuickSortTask(int[] array, int left, int right) {
+    public QuickSortTask(Comparable[] array, int left, int right) {
         this.array = array;
         this.left = left;
         this.right = right;
@@ -24,11 +24,11 @@ public class QuickSortTask extends RecursiveAction {
         }
     }
 
-    private int partition(int[] array, int left, int right) {
-        int pivot = array[right];
+    private int partition(Comparable[] array, int left, int right) {
+        Comparable pivot = array[right];
         int i = left - 1;
         for (int j = left; j < right; j++) {
-            if (array[j] < pivot) {
+            if (array[j].compareTo(pivot) < 0) {
                 i++;
                 swap(array, i, j);
             }
@@ -37,17 +37,17 @@ public class QuickSortTask extends RecursiveAction {
         return i + 1;
     }
 
-    private void swap(int[] array, int i, int j) {
-        int temp = array[i];
+    private void swap(Comparable[] array, int i, int j) {
+        Comparable temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
 
-    private void insertionSort(int[] array, int left, int right) {
+    private void insertionSort(Comparable[] array, int left, int right) {
         for (int i = left + 1; i <= right; i++) {
-            int key = array[i];
+            Comparable key = array[i];
             int j = i - 1;
-            while (j >= left && array[j] > key) {
+            while (j >= left && array[j].compareTo(key) > 0) {
                 array[j + 1] = array[j];
                 j--;
             }

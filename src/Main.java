@@ -3,8 +3,8 @@ import java.util.concurrent.ForkJoinPool;
 
 public class Main {
     public static void main(String[] args) {
-        int[] quickSortArray = {5, 3, 8, 4, 2, 7, 1, 10, 6, 9};  // Example data
-        int[] mergeSortArray = {5, 3, 8, 4, 2, 7, 1, 10, 6, 9};  // Example data
+        Comparable[] quickSortArray = {5, 3, 8, 4, 2, 7, 1, 10, 6, 9};  // Example data
+        Comparable[] mergeSortArray = {5, 3, 8, 4, 2, 7, 1, 10, 6, 9};  // Example data
 
         // QuickSort Example
         ForkJoinPool pool = new ForkJoinPool();
