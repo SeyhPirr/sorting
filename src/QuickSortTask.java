@@ -1,7 +1,7 @@
 import java.util.concurrent.RecursiveAction;
 
 public class QuickSortTask extends RecursiveAction {
-    private static final int THRESHOLD = 5;
+    private static final int THRESHOLD = 100;
     private int[] array;
     private int left;
     private int right;
